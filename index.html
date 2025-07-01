@@ -3,45 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Casa 3D TypeScript</title>
+    <title>Sistema Solar 3D</title>
     <style>
         body {
             margin: 0;
-            background: linear-gradient(135deg, #87CEEB, #98FB98);
+            background: #000011;
             font-family: Arial, sans-serif;
             overflow: hidden;
+            color: white;
         }
         
-        #info {
+        #controls {
             position: absolute;
             top: 20px;
             left: 20px;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background: rgba(0, 0, 50, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+            border: 2px solid #4169E1;
             z-index: 100;
         }
         
-        #info h3 {
-            margin: 0 0 10px 0;
-            color: #333;
+        #controls h3 {
+            margin: 0 0 15px 0;
+            color: #FFD700;
         }
         
-        #info p {
-            margin: 5px 0;
-            color: #666;
+        #controls p {
+            margin: 8px 0;
             font-size: 14px;
+        }
+        
+        #controls button {
+            background: linear-gradient(45deg, #4169E1, #6495ED);
+            border: none;
+            color: white;
+            padding: 8px 15px;
+            margin: 5px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        
+        #speed-control {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 50, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid #4169E1;
+        }
+        
+        #planet-info {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #FFD700;
+            min-width: 200px;
+            display: none;
         }
     </style>
 </head>
 <body>
-    <div id="info">
-        <h3>🏠 Casa Interactiva</h3>
-        <p><strong>Clic:</strong> Abrir/Cerrar puertas y ventanas</p>
-        <p><strong>Mouse:</strong> Rotar cámara</p>
+    <div id="controls">
+        <h3>🌌 Sistema Solar Completo</h3>
+        <p><strong>Mouse:</strong> Rotar vista</p>
         <p><strong>Scroll:</strong> Zoom</p>
+        <p><strong>Click:</strong> Info planeta/luna</p>
+        <p><strong>3 Clicks:</strong> 💥 Explotar planeta</p>
+        <p><strong>Velocidad >1.5x:</strong> Ver rastros</p>
+        <button onclick="resetView()">🏠 Vista Inicial</button>
+        <button onclick="followEarth()">🌍 Seguir Tierra</button>
     </div>
+    
+    <div id="speed-control">
+        <h4 style="margin: 0 0 10px 0; color: #FFD700;">⚡ Velocidad</h4>
+        <input type="range" id="speedSlider" min="0" max="3" value="1" step="0.1">
+        <p id="speedDisplay">1.0x</p>
+    </div>
+    
+    <div id="planet-info">
+        <h4 id="planet-name"></h4>
+        <p id="planet-description"></p>
+    </div>
+    
     <script type="module" src="main.ts"></script>
 </body>
 </html>
