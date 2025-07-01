@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa 3D TypeScript</title>
+    <style>
+        body {
+            margin: 0;
+            background: linear-gradient(135deg, #87CEEB, #98FB98);
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        
+        #info {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
+        
+        #info h3 {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+        
+        #info p {
+            margin: 5px 0;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div id="info">
+        <h3>🏠 Casa Interactiva</h3>
+        <p><strong>Clic:</strong> Abrir/Cerrar puertas y ventanas</p>
+        <p><strong>Mouse:</strong> Rotar cámara</p>
+        <p><strong>Scroll:</strong> Zoom</p>
+    </div>
+    <script type="module" src="main.ts"></script>
+</body>
+</html>

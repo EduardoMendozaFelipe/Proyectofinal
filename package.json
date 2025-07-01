@@ -1,0 +1,17 @@
+{
+  "name": "casa-3d",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build"
+  },
+  "dependencies": {
+    "three": "^0.160.1"
+  },
+  "devDependencies": {
+    "@types/three": "^0.160.0",
+    "typescript": "^5.8.3",
+    "vite": "^5.4.19"
+  }
+}
